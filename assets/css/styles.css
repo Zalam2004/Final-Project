@@ -27,18 +27,18 @@ button {
 	cursor: pointer;
 	font-size: 16px;
 }
-.true-btn {
+.true {
 	background: #228b22;
 	color: black;
 }
-.false-btn {
+.false {
 	background: #c32148;
 	color: black;
 }
 button:hover {
-	color: white;
+	color: plum;
 }
-#feedback {
+.result {
 	margin-top: 15px;
 	font-weight: bold;
 }
