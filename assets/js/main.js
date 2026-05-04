@@ -1,29 +1,33 @@
 // main.js
 
 let currentQuestion = null;
+let correctAnswer = "";
 
 function loadQuestion() {
     fetch("https://opentdb.com/api.php?amount=1&type=boolean")
     .then(res => res.json())
     .then(data => {
-        currentQuestion = data.results[0];
+        const currentQuestion = data.results[0];
 
         const temp = document.createElement("textarea");
-        temp.innerHTML = currentQuestion.question;
+        temp.innerHTML = currentQuestion;
 
-        document.getElementById("question").innerText = temp.value;
-        document.getElementById("result").innerText = "";
+        document.getElementById("question").textContent = temp.value;
+        correctAnswer = currentQuestion.correct_answer;
+        document.getElementById("result").textContent = "";
     });
 }
-
-function answer(userChoice) {
-    if (userChoice === currentQuestion.correct_answer) {
-        document.getElementById("result").innerText = "Correct!";
+function checkAnswer(userChoice) {
+    if (!correctAnswer) return;
+    
+    if (userChoice === correctAnswer) {
+        document.getElementById("result").textContent = "Right!";
     } else {
-        document.getElementById("result").innerText = "Wrong! Answer: " + currentQuestion.correct_answer;
+        document.getElementById("result").textContent = "Wrong! Correct Answer: " + correctAnswer;
     }
-    setTimeout(loadQuestion, 1500);
+    setTimeout(currentQuestion, 1500);
 }
 loadQuestion();
 
+        
 
