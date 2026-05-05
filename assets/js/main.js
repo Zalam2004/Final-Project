@@ -31,17 +31,12 @@ loadQuestion();
 
 let dares = null;
 
-function loadDare () {
-    fetch("https://fungenerators.com/dares.json")
-    .then(response => response.json())
-    .then(data => {
-        const dares = data.dares;
+async function loadDare () {
+    const response = await fetch("https://api.truthordarebot.xyz/api/dare")
+        const dares = await response.json(); 
 
-        const randomIndex = Math.floor(Math.floor() * dares.length);
-        const randomDare = dares[randomIndex];
-
-        document.getElementById("dare").textContent = randomDare;
-    })
+        document.getElementById("dare").textContent = dares.question;
+    }
     .catch(error => {
         document.getElementById("dare").textContent = "Error. Can't load dare.";
         console.log(error);
