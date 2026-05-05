@@ -29,21 +29,6 @@ function checkAnswer(userChoice) {
 }
 loadQuestion();
 
-let dares = null;
-
-async function loadDare () {
-    const response = await fetch("https://api.truthordarebot.xyz/api/dare")
-        const dares = await response.json(); 
-
-        document.getElementById("dare").textContent = dares.question;
-    }
-    .catch(error => {
-        document.getElementById("dare").textContent = "Error. Can't load dare.";
-        console.log(error);
-    });
-    setTimeout(dares, 1500);
-}
-loadDare();
 
         
 
