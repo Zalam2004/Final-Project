@@ -29,6 +29,14 @@ function checkAnswer(userChoice) {
 }
 loadQuestion();
 
+async function loadDares() {
+    const url = ("");
 
+    const response = await fetch(url);
+    const data = await response.json();
+
+    console.log(data);
+}
+loadDares();
         
 
