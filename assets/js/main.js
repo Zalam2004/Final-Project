@@ -29,14 +29,15 @@ function checkAnswer(userChoice) {
 }
 loadQuestion();
 
-async function loadDares() {
-    const url = ("");
+const dares = [
+  "Do 30 jumping jacks.",
+  "Hold a musical note for 1 minute.",
+  "Do the chicken dance.",
+   Act like a dog for 15 seconds.",
+];
 
-    const response = await fetch(url);
-    const data = await response.json();
-
-    console.log(data);
+function loadDare() {
+    const randomIndex = Math.floor(Math.random() * dares.length);
+    document.getElementById("dare").innerText = dares[randomIndex];
 }
-loadDares();
-        
 
