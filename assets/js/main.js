@@ -39,5 +39,12 @@ const dares = [
 function loadDare() {
     const randomIndex = Math.floor(Math.random() * dares.length);
     document.getElementById("dare").innerText = dares[randomIndex];
+
+    .catch(error => {
+        document.getElementById("question").innerHTML = "Error: Can't load question.";
+    });
+    setTimeout(dares, 1500);
 }
+loadDare();
+
 
