@@ -1,31 +1,35 @@
 // main.js
 
-let questionData = null;
-let correctAnswer = "";
+let questions = 
+[
+    "A group of fish is called school. (True)",
+    "Flamingos feed their young with their own blood. (False)",
+    "The largest mountains in the world are the Himalayas. (True)",
+    "Africa is a continent, not a country. (True)",
+];
+let answer = "";
 
 function loadQuestion() {
-    fetch("https://opentdb.com/api.php?amount=1&type=boolean")
-    .then(response => response.json())
-    .then(data => {
+    const randomIndex = Math.floor(Math.random() * question.length);
         const questionData = data.results[0];
 
-        document.getElementById("question").innerHTML = questionData.question;
-        correctAnswer = questionData.correct_answer;
+        document.getElementById("question").innerHTML = questions.question;
+        answer = questions.correct_answer;
         document.getElementById("result").innerHTML = "";
     })
     .catch(error => {
         document.getElementById("question").innerHTML = "Error: Can't load question.";
     });
 }
-function checkAnswer(userChoice) {
-    if (!correctAnswer) return;
+function checkAnswer(choice) {
+    if (!answer) return;
     
-    if (userChoice === correctAnswer) {
+    if (choice === answer) {
         document.getElementById("result").innerHTML = "Right!";
     } else {
         document.getElementById("result").innerHTML = "Wrong! Correct Answer: " + correctAnswer;
     }
-    setTimeout(currentQuestion, 1500);
+    setTimeout(questions, 1500);
 }
 loadQuestion();
 
@@ -41,7 +45,7 @@ function loadDare() {
     document.getElementById("dare").innerText = dares[randomIndex];
 
     .catch(error => {
-        document.getElementById("question").innerHTML = "Error: Can't load question.";
+        document.getElementById("dare").innerText = "Error: Can't load dare.";
     });
     setTimeout(dares, 1500);
 }
