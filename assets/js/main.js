@@ -1,54 +1,38 @@
 // main.js
 
-let questions = 
-[
-    "A group of fish is called school. (True)",
-    "Flamingos feed their young with their own blood. (False)",
-    "The largest mountains in the world are the Himalayas. (True)",
-    "Africa is a continent, not a country. (True)",
-];
-let answer = "";
+function randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min) + 1) + min;
+}
 
-function loadQuestion() {
-    const randomIndex = Math.floor(Math.random() * question.length);
-        const questionData = data.results[0];
+let grid = document.querySelectorAll(".grid-container");
+let divs = document.querySelectorAll(".grid-container div");
 
-        document.getElementById("question").innerHTML = questions.question;
-        answer = questions.correct_answer;
-        document.getElementById("result").innerHTML = "";
+function randomize() {
+    console.log(divs.length, "randomize!");
+
+    grid[0].style.transform = `rotate(${Math.random() * 180}deg)`;
+
+    divs.forEach(function(div) {
+
+    let scale = randomNumber(.5, 1.2);
+    let translateX = randomNumber(0, 50);
+    let translateY = randomNumber(0, 20);
+    let rotate = randomNumber(0, 180);
+
+    div.style.transform = `scale(${scale})translate(${translateX}%, ${translateY}%)rotate(${rotate}deg)`;
     })
-    .catch(error => {
-        document.getElementById("question").innerHTML = "Error: Can't load question.";
-    });
-}
-function checkAnswer(choice) {
-    if (!answer) return;
     
-    if (choice === answer) {
-        document.getElementById("result").innerHTML = "Right!";
-    } else {
-        document.getElementById("result").innerHTML = "Wrong! Correct Answer: " + correctAnswer;
-    }
-    setTimeout(questions, 1500);
 }
-loadQuestion();
+document.addEventListener("click", randomize);
 
-const dares = [
-  "Do 30 jumping jacks.",
-  "Hold a musical note for 1 minute.",
-  "Do the chicken dance.",
-   Act like a dog for 15 seconds.",
-];
-
-function loadDare() {
-    const randomIndex = Math.floor(Math.random() * dares.length);
-    document.getElementById("dare").innerText = dares[randomIndex];
-
-    .catch(error => {
-        document.getElementById("dare").innerText = "Error: Can't load dare.";
-    });
-    setTimeout(dares, 1500);
+function optionYes() {
+    document.getElementById("feedback").innerHTML = "Have a great day!";
 }
-loadDare();
+
+function optionNo() {
+    document.getElementById("feedback").innerHTML = "Better luck next time!";
+}
+    
+
 
 

@@ -4,79 +4,112 @@
 	font-family: Arial;
 }
 body {
+	margin: 1rem;
 	font-family: "Helevitica", "Arial", sans-serif;
-    background-color: #87ceeb;
-	justify-content: center;
+	margin: 0;
+	color: white;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
 	text-align: center;
-}
-#display {
-	background-color: #fffd37;
-	padding: 30px;
-	border-radius: 16px;
-	width: 400px;
-}
-.container {
-	background-color: #fffd37;
-	padding: 30px;
-	border-radius: 16px;
-	width: 400px;
-}
-#box {
-	background: #fffd37;
-	padding: 30px;
-	border-radius: 16px;
-	width: 400px;
-}
-h1 {
-	font-family: "Koulen", sans-serif;
     font-weight: 400;
     font-style: normal;
+	font-size: 3rem;
+	overflow: hidden;
 }
-h2 {
-	font-family: "Jost", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
+.furiuos-bg { 
+	background-image: url('../img/burning-fireplace-fire.gif');
+}
+.energetic-bg {
+	background-image: url('../img/R.gif');
+}
+.fear-bg {
+	background-image: url('../img/tenor.gif');
+}
+.joy-bg {
+	background-image: url('../img/Sunshine.gif');
+}
+.great-bg {
+	background-image: url('../img/Checkmark.gif');
+}
+.sad-bg {
+	background-image: url('../img/Crying.gif');
+}
+.complex-bg {
+	background-image: url('../img/questionmark-dribbble.gif');
+}
+h1 {
+	color:black;
+	font-size: 60px;
+	font-family: "Lily Script One", system-ui;
+    font-weight: 400;
     font-style: normal;
-	font-size: 18px;
-	margin-bottom: 20px;
+	text-align: center;
 }
 p {
+	color: black;
+	font-size: 30px;
 	font-family: "Mate", serif;
     font-weight: 400;
     font-style: normal;
-} 
-button {
-	padding: 10px 20px;
-	margin: 10px;
-	border: none;
-	border-radius: 8px;
-	cursor: pointer;
-	font-size: 16px;
 }
+
 .button {
-	display: inline-block;
-	padding: 10px 20px;
-	background-color: aquamarine;
 	color: black;
-	text-decoration: none;
-	border-radius: 5px;
+	padding 10px 20px;
 	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	text-decoration: none;
 }
 .button:hover {
 	color: white;
 }
-.true {
-	background: #228b22;
+#mad {
+	background-color: red;
+}
+#energy {
+	background-color: hotpink;
+}
+#fear {
+	background-color: orange;
+}
+#joy {
+	background-color: yellow;
+}
+#great {
+	background-color: green;
+}
+#sad {
+	background-color: blue;
+}
+#complex {
+	background-color: blueviolet;
+}
+#quiz {
+	background-color: grey;
+}
+#home {
+	background-color: grey;
+}
+#feedback {
 	color: black;
+	font-size: 30px;
+	font-family: "Mate", serif;
+    font-weight: 400;
+    font-style: normal;
 }
-.false {
-	background: #c32148;
-	color: black;
+.grid-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	gap: 2rem;
+	margin: 10% 4rem 0 4rem;
 }
-button:hover {
-	color: white;
+.last {
+	padding-bottom: 2rem;
+	border-bottom: 2px solid rgb(220, 200, 180);
 }
-.result {
-	margin-top: 15px;
-	font-weight: bold;
+div {
+	transition-property: transform;
+    transition-duration: 3s;
 }
